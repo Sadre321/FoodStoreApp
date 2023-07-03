@@ -1,0 +1,30 @@
+<div class="row my-3">
+    <div class="col-3">
+        <categories></categories>
+    </div>
+    <div class="col-9">
+        <div class="container">
+            <div class="card w-25" *ngFor="let food of foods">
+                <img src="assets/img/{{food.imageUrl}}" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        {{food.name}}
+                    </h3>
+                    <div class="d-flex gap-2">
+                        <p *ngFor="let tag of food.tags" class="opacity-25">
+                            {{tag}}
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <p class="card-text text-center">{{food.price |currency }}</p>
+                    <button 
+                    class="btn btn-outline-danger"
+                    routerLink="/foods/{{food.id}}">
+                        Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

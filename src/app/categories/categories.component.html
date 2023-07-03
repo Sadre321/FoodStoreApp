@@ -1,0 +1,17 @@
+<ul class="list-group">
+    <li (click)="SelectCategory()"
+    class="list-group-item list-group-item-action"
+    [class.bg-danger]="displayAll" routerLink="/foods">
+        Tum kategoriler
+    </li>
+    
+
+    <li class="list-group-item" *ngFor="let c of category"
+    [class.bg-danger]="selectedCategory === c"
+    (click)="SelectCategory(c)"
+    routerLink="/foods/category/{{c.categoryId}}"
+    >
+        {{c.name}}
+    </li>
+</ul>
+

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="foodImg my-5">
+        <img src="assets/img/{{selectedFood.imageUrl}}" class="w-100 img-fluid rounded-4 hover-shadow">
+    </div>
+    <div class="content my-3">
+        <h3 class="content-header">{{selectedFood.name}}</h3>
+        <p class="my-2">
+            {{selectedFood.description}}
+        </p>
+        <div class="text-end">
+            <p class="text-muted" *ngFor="let tag of selectedFood.tags">
+                {{tag}}
+            </p>
+        </div>
+        <button class="btn btn-outline-danger">
+            Add to Card
+        </button>
+    </div> 
+</div>
